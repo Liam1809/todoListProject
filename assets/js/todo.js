@@ -3,18 +3,12 @@ $("li").on("click", function(){
 	$(this).toggleClass("strike-through");
 });
 // Click on X to delete todo
-$("span").on("click", function(){
-	alert("you click on span");
-});
+$("span").on("click", function(event){
+	// remove
+	$(this).parent().fadeOut(500, function(){
+		$(this).remove();
+	});
+	// Stop the event Bubbling from other elements
+	event.stopPropagation();
 
-$("li").on("click", function(){
-	alert("you click on li");
-});
-
-$("body").on("click", function(){
-	alert("you click on body");
-});
-
-$("html").on("click", function(){
-	alert("you click on html");
 });
