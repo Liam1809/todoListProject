@@ -11,7 +11,6 @@ $("ul").on("click", "span", function(event){
 	// Stop the event Bubbling from other elements
 	event.stopPropagation();
 });
-
 // Creating Todos
 $('input[type="text"]').on("keypress", function(event){
 	let text;
@@ -20,7 +19,10 @@ $('input[type="text"]').on("keypress", function(event){
 		text = $(this).val();
 		$(this).val("");
 		// create new li and add to ul
-		$("ul").append("<li><span>X</span> " + text + "</li>");
+		$("ul").append("<li><span><i class='fas fa-trash-alt'></i></span> " + text + "</li>");
 	}
-
+});
+// pencil handler
+$(".fa-pencil-alt").on("click", function(){
+	$('input[type="text"]').fadeToggle(500);
 });
